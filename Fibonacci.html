@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 50%;
+            }
+            
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+            
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+            </style>
+
+
+    <title>Fibonacci</title>
+
+    <script>
+        function calcular(){
+            var entrada;
+            entrada=document.getElementById('valor').value;
+            
+            alert("I am an alert box!");
+
+            document.getElementById("par1").style.color = 'red';
+            //document.getElementById("fiboN1").innerHTML = Fibonacci_Recursivo(entrada);
+            document.getElementById("fiboN1").innerHTML = Fibonacci_loop(entrada);
+            document.getElementById("fiboN2").innerHTML = Fibonacci_loop(entrada-1);
+        }
+
+        //Toma demasiado tiempo, trabaja bien hasta N=40
+        function Fibonacci_Recursivo(numero){
+            if (numero == 0) {
+                return 0;
+            } 
+            if (numero == 1) {
+                return 1;
+            } 
+            if (numero == 2) {
+                return 1;
+            }    
+            return Fibonacci_Recursivo(numero-1)+Fibonacci_Recursivo(numero-2);
+        }
+
+        //Buen tiempo, pero por problemas al mostrar resultados trabaja bien hasta N=100
+        function Fibonacci_loop(numero){
+            var aux1=0;
+            var aux2=1;
+ 
+            for(i=0; i<numero;i++){
+                var aux3=aux1;
+                aux1=aux2;
+                aux2=aux3+aux2;
+            }
+            return aux2;
+ 
+        }
+        function Fibonacci_math(numero){
+            var aux1=0;
+            var aux2=1;
+ 
+            for(i=0; i<numero;i++){
+                var aux3=aux1;
+                aux1=aux2;
+                aux2=aux3+aux2;
+            }
+            return aux2;
+ 
+        }
+        function filtro(valor){
+            alert(valor);
+            if(valor >= 48 && valor <= 57){
+                return true;
+            }
+            if(valor == 8){
+                return true;
+            }
+
+        }
+
+    </script>
+
+</head>    
+<body>
+    <h1>Sucesión de Fibonacci.</h1>
+
+    <p id="par1">Calculadora Sucesión de Fibonacci.</p>
+
+    Inserte un numero entero entre 0 y 100, y la calculadora entregara la sucecion de fibonacci de ese numero y el anterior.
+    <br><br>
+    <fieldset>
+            <legend>Sucesión de Fibonacci:</legend>
+            Inserte número:<br>
+            <input type="number" id="valor" onpaste="return false;" name="number" min="0" max="100" step="1" onkeydown='return (event.which >= 48 && event.which <= 57) || event.which == 8 || event.which == 46'></input>
+            <button onclick="calcular()">Calcular...</button>
+            <br><br>
+
+            <table>
+                    <tr>
+                      <th>Numero N</th>
+                      <th>Numero N-1</th>
+                    </tr>
+                    <tr>
+                      <td id="fiboN1">Resultado 1</td>
+                      <td id="fiboN2">Resultado 2</td>
+                    </tr>
+                    
+                  </table>
+          </fieldset>
+    <p>Sucesión obtenida recursivamene mediante la formula: <var>F</var><sub>(n)</sub> = <var>F</var><sub>(n-1)</sub> + <var>F</var><sub>(n-2)</sub> .</p>
+    
+</body>
+</html>
