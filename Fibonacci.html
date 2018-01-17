@@ -25,12 +25,18 @@
 
     <title>Fibonacci</title>
 
+    
     <script>
         function calcular(){
             var entrada;
             entrada=document.getElementById('valor').value;
             
-            alert("I am an alert box!");
+            if(entrada >= 101){
+                alert("El numero debe ser entre 0 y 100");
+                document.getElementById('valor').value="";
+                return;
+            }
+            
 
             document.getElementById("par1").style.color = 'red';
             //document.getElementById("fiboN1").innerHTML = Fibonacci_Recursivo(entrada);
@@ -65,28 +71,12 @@
             return aux2;
  
         }
+        //Pendiente
         function Fibonacci_math(numero){
-            var aux1=0;
-            var aux2=1;
- 
-            for(i=0; i<numero;i++){
-                var aux3=aux1;
-                aux1=aux2;
-                aux2=aux3+aux2;
-            }
-            return aux2;
+            return numero;
  
         }
-        function filtro(valor){
-            alert(valor);
-            if(valor >= 48 && valor <= 57){
-                return true;
-            }
-            if(valor == 8){
-                return true;
-            }
 
-        }
 
     </script>
 
@@ -101,7 +91,8 @@
     <fieldset>
             <legend>Sucesión de Fibonacci:</legend>
             Inserte número:<br>
-            <input type="number" id="valor" onpaste="return false;" name="number" min="0" max="100" step="1" onkeydown='return (event.which >= 48 && event.which <= 57) || event.which == 8 || event.which == 46'></input>
+            <input type="text" id="valor" maxlength="3" onpaste="return false;" name="number" min="0" max="100" step="1" onkeydown='return (event.which >= 48 && event.which <= 57) || event.which == 8 || event.which == 46'></input>
+            //http://andresroyarce.000webhostapp.com/fibonacci.php?valor=value
             <button onclick="calcular()">Calcular...</button>
             <br><br>
 
