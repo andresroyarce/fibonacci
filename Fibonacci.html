@@ -45,10 +45,10 @@
             //Fibonacci_math(numero)
             document.getElementById("par1").style.color = 'red';
             //document.getElementById("fiboN1").innerHTML = Fibonacci_Recursivo(entrada);
-            //document.getElementById("fiboN1").innerHTML = Fibonacci_loop(entrada);
-            //document.getElementById("fiboN2").innerHTML = Fibonacci_loop(entrada-1);
-            document.getElementById("fiboN1").innerHTML = Fibonacci_math(entrada);
-            document.getElementById("fiboN2").innerHTML = Fibonacci_math(entrada-1);
+            document.getElementById("fiboN1").innerHTML = Fibonacci_loop(entrada);
+            document.getElementById("fiboN2").innerHTML = Fibonacci_loop(entrada-1);
+            //document.getElementById("fiboN1").innerHTML = Fibonacci_math(entrada);
+            //document.getElementById("fiboN2").innerHTML = Fibonacci_math(entrada-1);
         
         }
 
@@ -105,7 +105,6 @@
             <legend>Sucesión de Fibonacci:</legend>
             Inserte número:<br>
             <input type="text" id="valor" maxlength="3" onpaste="return false;" name="number" min="0" max="100" step="1" onkeydown='return (event.which >= 48 && event.which <= 57) || event.which == 8 || event.which == 46'></input>
-            //http://andresroyarce.000webhostapp.com/fibonacci.php?valor=value
             <button onclick="calcular()">Calcular...</button>
             <br><br>
 
