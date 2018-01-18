@@ -6,15 +6,22 @@ Descripcion:
 Mediante la formula Fn = Fn-1 + Fn-2; calcula el valor N de la sucesión de Fibonacci y en numero N-1.
 El resultado lo muestra en una tabla dentro de la pagina.
 
+Desarrollo:
+
 Se utilizaron dos metodos para el calculo; un metodo recursivo el cual ocupa demasiado recursos y solo funciona bien hasta N=40; y un metodo loop el cual funciona para valores mucho mayores. Sin embargo a partir de 100, el largo de los numeros sobrepasan el largo visible de la pagina, por lo que solo se limitó a 100.
 
 Dependencias:
+
+Funciona con HTML5 y ECMAScript 7. Esto aplica para las ultimas versioones de Firefox, Chrome y a partir de IE Edge 10.
+
+Ejecución:
 
 La pagina de prueba del algoritmo se encuentra en el siguiente link:
 
 http://andresroyarce.000webhostapp.com/
 
-Funciona con HTML5 y ECMAScript 7. Esto aplica para las ultimas versioones de Firefox, Chrome y a partir de IE Edge 10.
+Para ejecutar el script sólo se debe ingresar el link anterior en cualquier navegador (preferentemente actualizado a la fecha).
+Luego se debe ingresar el número deseado entre 0 y 100, y presionar el boton "Calcular". Una vez realizado el cálculo, la pagina mostrará en una tabla los resultados solicitados.
 
 Test:
 
