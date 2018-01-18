@@ -8,7 +8,7 @@ El resultado lo muestra en una tabla dentro de la pagina.
 
 ## **Desarrollo:**
 
-Se utilizaron dos metodos para el calculo; un metodo recursivo el cual ocupa demasiado recursos y solo funciona bien hasta N=40; y un metodo loop el cual funciona para valores mucho mayores. Sin embargo a partir de 100, el largo de los numeros sobrepasan el largo visible de la pagina, por lo que solo se limitó a 100.
+Se utilizaron tres metodos para el calculo; un metodo recursivo el cual ocupa demasiado recursos y solo funciona bien hasta N=40; y un metodo loop el cual funciona para valores mucho mayores. Sin embargo a partir de 100, el largo de los numeros sobrepasan el largo visible de la pagina, por lo que solo se limitó a 100. El tercer metodo es el matematico, pero presenta problemas de exactitud debido a los calculos de raices y potencias los cuales no son exactos.
 
 ## **Dependencias:**
 
