@@ -25,22 +25,31 @@
 
     <title>Fibonacci</title>
 
+    
     <script>
         function calcular(){
             var entrada;
             entrada=document.getElementById('valor').value;
             
+            if(entrada == 0){
+                document.getElementById("fiboN1").innerHTML = 0;
+                document.getElementById("fiboN2").innerHTML = "No Aplica";
+                return;
+            }
             if(entrada >= 101){
                 alert("El numero debe ser entre 0 y 100");
                 document.getElementById('valor').value="";
                 return;
             }
             
-
+            //Fibonacci_math(numero)
             document.getElementById("par1").style.color = 'red';
             //document.getElementById("fiboN1").innerHTML = Fibonacci_Recursivo(entrada);
-            document.getElementById("fiboN1").innerHTML = Fibonacci_loop(entrada);
-            document.getElementById("fiboN2").innerHTML = Fibonacci_loop(entrada-1);
+            //document.getElementById("fiboN1").innerHTML = Fibonacci_loop(entrada);
+            //document.getElementById("fiboN2").innerHTML = Fibonacci_loop(entrada-1);
+            document.getElementById("fiboN1").innerHTML = Fibonacci_math(entrada);
+            document.getElementById("fiboN2").innerHTML = Fibonacci_math(entrada-1);
+        
         }
 
         //Toma demasiado tiempo, trabaja bien hasta N=40
@@ -72,7 +81,12 @@
         }
         //Pendiente
         function Fibonacci_math(numero){
-            return numero;
+            var phi;
+            var salida;
+            phi=(1+Math.sqrt(5))/2;
+            salida=(Math.pow(phi, numero)-Math.pow((1-phi),numero))/Math.sqrt(5);
+            
+            return salida;
  
         }
 
